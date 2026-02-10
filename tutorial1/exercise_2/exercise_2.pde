@@ -1,6 +1,7 @@
 //Exercise 2
 size(200, 200);
 strokeWeight(2);
+rect(105, 128.75, 30, 30);
 fill(255);
 circle(105, 105, 25);
 fill(0, 200, 255);
