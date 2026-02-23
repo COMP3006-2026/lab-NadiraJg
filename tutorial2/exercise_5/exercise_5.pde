@@ -97,12 +97,10 @@ class Person {
            centerX+headSize*0.30, y-headSize*0.60,
            centerX+headSize*0.35, y+headSize*0.30,
            centerX+headSize*0.08, y-headSize*0.12);
-    
     bezier(centerX-headSize*0.08, y-headSize*0.15,
            centerX-headSize*0.30, y-headSize*0.60,
            centerX-headSize*0.35, y+headSize*0.30,
            centerX-headSize*0.08, y-headSize*0.12);
-    
     line(centerX+headSize*0.05, y-headSize*0.15,
          centerX+headSize*0.18, y-headSize*0.20);
     line(centerX+headSize*0.05, y-headSize*0.15,
@@ -121,7 +119,7 @@ class Person {
     y+=speed;
   }
   
-  void moveVerticalBounce() {
+  void bounceVertical() {
     y+=speedY;
     if(y<=0 || y+height>=600) {
       speedY*=-1;
@@ -142,7 +140,6 @@ void setup() {
   person2 = new Person(200, 100, 80, 120, color(200, 100, 100), color(0, 255, 0));
   person3 = new Person(350, 200, 120, 180, color(100, 150, 200), color(255, 200, 0));
   person4 = new Person(550, 150, 90, 135, color(180, 120, 180), color(255, 0, 255));
-  
   person2.setSpeedY(2);
 }
 
@@ -153,6 +150,5 @@ void draw() {
   person2.display();
   person3.display();
   person4.display();
-  
-  person2.moveVerticalBounce();
+  person2.bounceVertical();
 }
