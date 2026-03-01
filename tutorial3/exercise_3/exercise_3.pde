@@ -3,13 +3,28 @@ void setup() {
 }
 
 void draw() {
+  // make a hat
+  fill(255,170,200); // peach
+  stroke(0);
+  strokeWeight(1);
+  beginShape();
+  vertex(160,180);
+  bezierVertex(30,235,370,235,240,180);
+  endShape();
   beginShape();
   vertex(150,200);
   bezierVertex(160,140,240,140,250,200);
   endShape();
-  //vertex(155,190);
+  
+  // make the ribbon
+  stroke(255,0,0);
+  strokeWeight(2);
   beginShape();
-  vertex(150,290);
-  bezierVertex(130,250,160,300,170,290);
+  vertex(200,200);
+  bezierVertex(150,210,150,160,215,210);
+  endShape();
+  beginShape();
+  vertex(200,200);
+  bezierVertex(250,210,250,160,185,210);
   endShape();
 }
