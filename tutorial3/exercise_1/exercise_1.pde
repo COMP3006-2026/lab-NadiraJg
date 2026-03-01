@@ -1,0 +1,13 @@
+size(200,200);
+noFill();
+beginShape();
+rectMode(CENTER);
+ellipseMode(CENTER);
+fill(0);
+rect(100,100,60,45);
+fill(0,250,245);
+rect(100,100,48,33);
+fill(255);
+ellipse(100,143,60,20);
+rect(100,133,10,21);
+endShape();
