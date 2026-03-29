@@ -33,8 +33,10 @@ void mousePressed() {
 }
 
 void mouseDragged() {
-  rectW = mouseX - x;
-  rectH = mouseY - y;
+  if (!copy) {
+    rectW = mouseX - x;
+    rectH = mouseY - y;
+  }
 }
 
 void mouseReleased() {
