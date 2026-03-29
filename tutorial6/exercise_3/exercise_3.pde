@@ -2,7 +2,7 @@ PImage img3;
 
 int rectW=0, rectH=0, x=0, y=0, cx=0, cy=0;
 
-boolean copy = false, paste = false, b = false;
+boolean copy = false, paste = false;
 
 void setup() {
   size(400, 400);
