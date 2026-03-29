@@ -16,7 +16,7 @@ void draw() {
   stroke(255);
   if (!copy)
     rect(x, y, rectW, rectH);
-  if (copy) {
+  else {
     if (!paste) {
       cx = mouseX;
       cy = mouseY;
