@@ -14,10 +14,8 @@ void draw() {
   ellipseMode(CENTER);
   
   fill(0);
-  randomSeed(0);
   rect(xr,yr,rectW,rectH);
   fill(255);
-  randomSeed(1);
   ellipse(xe,ye,ellW,ellH);
 }
 

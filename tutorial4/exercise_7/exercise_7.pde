@@ -4,7 +4,7 @@ int male=0, female=0, after2003=0;
 void setup() {
   data = loadStrings("T4q7.csv");
   for (int i=0; i<data.length; i++) {
-    if (i==0)
+    if (i < 2)
       continue;
     String[] col = split(data[i], ',');
     if (col[4].equals("Male"))

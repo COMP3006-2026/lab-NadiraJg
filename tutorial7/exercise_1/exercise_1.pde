@@ -9,13 +9,13 @@ float speed = 0.025;     // Rotation speed
 void setup() {
   size(400, 400);
   frameRate(15);  // maxium 25 fps
+  moon = loadImage("images/moon.png");
+  moon.resize(50, 50);
   for (int i = 0; i < numEarthFrames; i++) {
     // load all images into the array
     // use nf(i, 2) to load a number with 2 digit, 01, .. 09, 10,..
     earth[i] = loadImage("images/" + i + ".gif");
     earth[i].resize(100, 100);
-    moon = loadImage("images/moon.png");
-    moon.resize(50, 50);
   }
 }
 void draw() {

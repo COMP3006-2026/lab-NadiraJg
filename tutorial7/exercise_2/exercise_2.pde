@@ -9,7 +9,7 @@ float speed = 0.025;     // Rotation speed
 void setup() {
   size(400, 400);
   smooth();
-  frameRate(15);  // maxium 25 fps
+  frameRate(15);  // maximum 25 fps
   for (int i = 0; i < numEarthFrames; i++) {
     earth[i] = loadImage("images/" + i + ".gif");
     earth[i].resize(100, 100);
