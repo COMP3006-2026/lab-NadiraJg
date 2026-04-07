@@ -3,14 +3,12 @@ int frame = 0;            // the frame to display
 PImage[] earth = new PImage[numEarthFrames]; 
 PImage moon, shuttle;
 float angle = 0;          // Current angle of moon
-float distance = 150;     // Distance from Earth
-float speed = 0.025;      // Rotation speed
-boolean shuttleOn = false;
-float shuttleSpeed = 0.01;
+float distance = 150;     // Distance erom Earth to the moon
+float speed = 0.025;      // Orbiting speed of the moon
 float shuttleX;
 float shuttleY;
-float pct = 0.0;      
-float step = 0.0;    // size of each step along the path
+float pct = 0.0;      // percentage travele (0.0 to 1.0);
+float step = 0.0;     // size of each step along the path
 boolean arrived = false;
 
 void setup() {
