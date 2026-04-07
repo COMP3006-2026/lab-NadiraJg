@@ -7,13 +7,16 @@ float distance = 150;     // Distance from Earth
 float speed = 0.025;      // Rotation speed
 boolean shuttleOn = false;
 float shuttleSpeed = 0.01;
-float shuttleX = width/2;
-float shuttleY = height/2-75;
-float pct = 0.0;      // percentage travele (0.0 to 1.0);
-float step = 0.01;    // size of each step along the path
+float shuttleX;
+float shuttleY;
+float pct = 0.0;      
+float step = 0.0;    // size of each step along the path
+boolean arrived = false;
 
 void setup() {
   size(500, 500);
+  shuttleX = width/2;
+  shuttleY = height/2-75;
   frameRate(15);  // maxium 25 fps
   for (int i = 0; i < numEarthFrames; i++) {
     earth[i] = loadImage("earth/" + i + ".gif");
@@ -39,15 +42,23 @@ void draw() {
   
   float targetShuttleX = moonX;
   float targetShuttleY = moonY-30;
-  //float d = dist(shuttleX, shuttleY, targetShuttleX, targetShuttleY);
+  
+  if (!arrived) {
+    step += 0.005;                            
+    float speed = sin(step * PI) * 0.005;    
+    pct += speed;                          
+  }
+  
+  if (pct >= 1.0) {
+    pct = 1.0;
+    arrived = true;
+  }
+  
   float distX = targetShuttleX - shuttleX;
   float distY = targetShuttleY - shuttleY;
+  shuttleX = shuttleX + (pct * distX);
+  shuttleY = shuttleY + (pct * distY);
   image(shuttle, shuttleX, shuttleY);
-  pct += step;
-  //if (pct < 1.0) {
-    shuttleX = shuttleX + (pct * distX);
-    shuttleY = shuttleY + (pct * distY);
- // }
-    
+  
   angle += speed;
 }
