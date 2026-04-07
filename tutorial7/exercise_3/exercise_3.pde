@@ -4,11 +4,12 @@ PImage[] earth = new PImage[numEarthFrames];
 PImage moon, shuttle;
 float angle = 0;          // Current angle of moon
 float distance = 150;     // Distance erom Earth to the moon
-float speed = 0.025;      // Orbiting speed of the moon
+float moonSpeed = 0.025;      // Orbiting speed of the moon
 float shuttleX;
 float shuttleY;
 float pct = 0.0;      // percentage travele (0.0 to 1.0);
 float step = 0.0;     // size of each step along the path
+float shuttleSpeed = 0;
 boolean arrived = false;
 
 void setup() {
@@ -43,8 +44,8 @@ void draw() {
   
   if (!arrived) {
     step += 0.005;                            
-    float speed = sin(step * PI) * 0.005;    
-    pct += speed;                          
+    shuttleSpeed = sin(step * PI) * 0.005;    
+    pct += shuttleSpeed;                          
   }
   
   if (pct >= 1.0) {
@@ -58,5 +59,5 @@ void draw() {
   shuttleY = shuttleY + (pct * distY);
   image(shuttle, shuttleX, shuttleY);
   
-  angle += speed;
+  angle += moonSpeed;
 }
