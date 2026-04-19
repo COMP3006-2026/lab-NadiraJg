@@ -20,18 +20,13 @@ void setup(){
       y = 0;
     
     float rand = random(25, 76);
-    float red = random(0, 256);
-    float green = random(0, 256);
-    float blue = random(0, 256);
 
     myBox[i] = new Box(rand, rand, rand);
-    myBox[i].fill(color(red, green, blue));
-    myBox[i].drawMode(Shape3D.ALL);
+    myBox[i].drawMode(Shape3D.WIRE);
     myBox[i].moveTo(100 + x, 100 + y, 0);
     
     mySphere[i] = new Ellipsoid(rand, rand, rand, 20, 30);
-    mySphere[i].fill(color(red, green, blue));
-    mySphere[i].drawMode(Shape3D.ALL);
+    mySphere[i].drawMode(Shape3D.WIRE);
     mySphere[i].moveTo(100 + x, 500 + y, 0);
   }
 }
