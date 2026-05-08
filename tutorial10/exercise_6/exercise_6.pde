@@ -33,7 +33,7 @@ void draw() {
   cam.getState().apply(pg);
   image(pg, 0, 0);
   
-  time += 0.01; // Increment time for smooth animations
+  time += 0.01;
 }
 
 
